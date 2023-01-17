@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import Name from "./Name";
+import { Routes, Route } from "react-router-dom";
+import Main from "./Main";
+import "./app.css";
 
 function App() {
+  // let f = localStorage.getItem("userName");
+  let f = sessionStorage.getItem("userName");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+      <div className="body">
+        {f == null || f === "" ? (
+          <Routes>
+            <Route path="/" element={<Name />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/Main" element={<Main />} />
+          </Routes>
+        )}
+      </div>
+      <div id="foot">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Made By{" "}
+          <a href="https://www.linkedin.com/in/himanshudadheech/">
+            Himanshu Dadheech
+          </a>
+          &copy;2022-23
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </div>
+    </>
   );
+
+  // if (f == null || f === "") {
+  //   return <>{<Name />}</>;
+  // } else {
+  //   return (
+  //     <div>
+  //       <Routes>
+  //         <Route path="/Main" element={<Main />} />
+  //       </Routes>
+  //     </div>
+  //   );
 }
 
 export default App;
