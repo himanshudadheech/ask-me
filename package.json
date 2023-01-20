@@ -1,8 +1,10 @@
 {
   "name": "ask-me",
   "version": "0.1.0",
+  "homepage" : "https://github.com/himanshudadheech.github.io/ask-me",
   "private": true,
   "dependencies": {
+    
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-   "homepage" : "https://github.com/himanshudadheech.github.io/ask-me",
+  
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
